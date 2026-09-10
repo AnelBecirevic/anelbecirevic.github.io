@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta
+            name="description"
+            content="Portfolio of Anel Becirevic, Java Backend Developer working with Java, Spring Boot, PostgreSQL and Spring JDBC."
+    >
+
     <title>Anel Becirevic | Java Backend Developer</title>
 
     <link rel="stylesheet" href="style.css">
@@ -12,53 +17,293 @@
 
 <body>
 
-<main class="container">
 
-    <!-- ===================================================== -->
-    <!-- HEADER -->
-    <!-- ===================================================== -->
+<!-- ========================================================= -->
+<!-- NAVIGATION -->
+<!-- ========================================================= -->
 
-    <header class="hero">
+<nav class="navbar">
 
-        <h1>
+    <div class="nav-container">
+
+        <a href="#home" class="nav-logo">
             Anel Becirevic
-        </h1>
+        </a>
 
-        <p class="job-title">
-            Java Backend Developer
-        </p>
 
-    </header>
+        <div class="nav-links">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About</a>
+
+            <a href="#projects">Projects</a>
+
+            <a href="#skills">Skills</a>
+
+            <a href="#contact">Contact</a>
+
+
+            <a
+                    href="https://github.com/AnelBecirevic"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="github-nav"
+                    aria-label="GitHub Profile"
+            >
+
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+
+                    <path
+                            fill="currentColor"
+                            d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.01 3.25 9.26 7.76
+                            10.76.56.1.77-.24.77-.54v-2.1c-3.16.69-3.82-1.34-3.82-1.34
+                            -.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69
+                            1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22
+                            3.27.93.1-.73.39-1.22.71-1.5-2.52-.29-5.17-1.26
+                            -5.17-5.58 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44
+                            .11-2.99 0 0 .95-.3 3.1 1.16a10.78 10.78 0 0 1
+                            5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23
+                            2.7.11 2.99.72.79 1.16 1.8 1.16 3.03 0 4.33-2.66
+                            5.28-5.19 5.56.4.35.75 1.04.75 2.1v3.11c0
+                            .3.2.65.78.54a11.26 11.26 0 0 0 7.75-10.76C23.25
+                            5.48 18.27.5 12 .5Z"
+                    />
+
+                </svg>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<main>
+
+
+    <!-- ===================================================== -->
+    <!-- HERO -->
+    <!-- ===================================================== -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-background">
+
+            <img
+                    src="images/profile.png"
+                    alt="Portrait of Anel Becirevic"
+                    class="hero-photo"
+            >
+
+            <div class="hero-image-overlay"></div>
+
+        </div>
+
+
+        <div class="hero-container">
+
+            <div class="hero-content">
+
+                <p class="hero-intro">
+                    Hello, I'm
+                </p>
+
+
+                <h1>
+                    Anel Becirevic
+                </h1>
+
+
+                <h2 class="hero-title">
+                    Java Backend Developer
+                </h2>
+
+
+                <p class="hero-description">
+                    I build practical web applications with Java,
+                    Spring Boot and relational databases, with a focus
+                    on clean backend architecture and real-world
+                    functionality.
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                            href="#projects"
+                            class="button button-primary"
+                    >
+                        View My Work
+
+                        <span>→</span>
+                    </a>
+
+
+                    <a
+                            href="#contact"
+                            class="button button-secondary"
+                    >
+                        Get In Touch
+                    </a>
+
+                </div>
+
+
+                <div class="social-links">
+
+
+                    <!-- GitHub -->
+
+                    <a
+                            href="https://github.com/AnelBecirevic"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                    >
+
+                        <span class="social-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                        fill="currentColor"
+                                        d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.01 3.25 9.26 7.76
+                                        10.76.56.1.77-.24.77-.54v-2.1c-3.16.69-3.82-1.34-3.82-1.34
+                                        -.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69
+                                        1.13.08 1.73 1.16 1.73 1.16 1 1.72 2.63 1.22
+                                        3.27.93.1-.73.39-1.22.71-1.5-2.52-.29-5.17-1.26
+                                        -5.17-5.58 0-1.23.44-2.24 1.16-3.03-.12-.29-.5-1.44
+                                        .11-2.99 0 0 .95-.3 3.1 1.16a10.78 10.78 0 0 1
+                                        5.64 0c2.15-1.46 3.1-1.16 3.1-1.16.61 1.55.23
+                                        2.7.11 2.99.72.79 1.16 1.8 1.16 3.03 0 4.33-2.66
+                                        5.28-5.19 5.56.4.35.75 1.04.75 2.1v3.11c0
+                                        .3.2.65.78.54a11.26 11.26 0 0 0 7.75-10.76C23.25
+                                        5.48 18.27.5 12 .5Z"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                        <span>GitHub</span>
+
+                    </a>
+
+
+                    <!-- LinkedIn -->
+
+                    <a
+                            href="https://www.linkedin.com/in/anel-becirevic-9670813b0/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="social-link"
+                    >
+
+                        <span class="social-icon">
+
+                            <svg viewBox="0 0 24 24">
+
+                                <path
+                                        fill="currentColor"
+                                        d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S.02 4.88.02
+                                        3.5 1.13 1 2.5 1s2.48 1.12 2.48 2.5ZM.25
+                                        8h4.5v14H.25V8Zm7.25 0h4.31v1.91h.06c.6-1.14
+                                        2.07-2.34 4.26-2.34 4.56 0 5.4 3 5.4 6.91V22
+                                        h-4.49v-6.67c0-1.59-.03-3.64-2.22-3.64-2.22
+                                        0-2.56 1.73-2.56 3.52V22H7.5V8Z"
+                                />
+
+                            </svg>
+
+                        </span>
+
+                        <span>LinkedIn</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
 
 
     <!-- ===================================================== -->
     <!-- ABOUT -->
     <!-- ===================================================== -->
 
-    <section>
+    <section class="content-section" id="about">
 
-        <h2>
-            About Me
-        </h2>
+        <div class="container">
 
-        <p>
-            I am currently developing my skills in Java backend development,
-            with a focus on Spring Boot, relational databases and practical
-            web applications.
-        </p>
+            <div class="section-heading">
 
-        <p>
-            During my current training I have worked with Java, Spring Boot,
-            PostgreSQL, SQL, Thymeleaf and Git while learning how backend
-            architecture, database design and frontend integration work
-            together in a complete application.
-        </p>
+                <p class="section-label">
+                    About
+                </p>
 
-        <p>
-            I enjoy learning through practical projects and am currently
-            looking to continue developing my skills in a professional
-            software development environment.
-        </p>
+                <h2>
+                    About Me
+                </h2>
+
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="about-main">
+
+                    <p>
+                        I am currently developing my skills in Java
+                        backend development, with a focus on Spring Boot,
+                        relational databases and practical web applications.
+                    </p>
+
+
+                    <p>
+                        During my current training I have worked with
+                        Java, Spring Boot, PostgreSQL, SQL, Thymeleaf and
+                        Git while learning how backend architecture,
+                        database design and frontend integration work
+                        together in a complete application.
+                    </p>
+
+
+                    <p>
+                        I enjoy learning through practical projects and
+                        am currently looking to continue developing my
+                        skills in a professional software development
+                        environment.
+                    </p>
+
+                </div>
+
+
+                <aside class="about-card">
+
+                    <span class="about-card-label">
+                        Current focus
+                    </span>
+
+                    <strong>
+                        Backend Development
+                    </strong>
+
+                    <p>
+                        Java, Spring Boot, PostgreSQL and building
+                        complete web applications.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </div>
 
     </section>
 
@@ -67,41 +312,54 @@
     <!-- TECH STACK -->
     <!-- ===================================================== -->
 
-    <section>
+    <section class="content-section skills-section" id="skills">
 
-        <h2>
-            Technical Stack
-        </h2>
+        <div class="container">
 
-        <div class="tags">
+            <div class="section-heading">
 
-            <span>Java</span>
+                <p class="section-label">
+                    Technologies
+                </p>
 
-            <span>Spring Boot</span>
+                <h2>
+                    Technical Stack
+                </h2>
 
-            <span>Spring MVC</span>
+            </div>
 
-            <span>Spring JDBC</span>
 
-            <span>PostgreSQL</span>
+            <div class="tags">
 
-            <span>SQL</span>
+                <span>Java</span>
 
-            <span>Thymeleaf</span>
+                <span>Spring Boot</span>
 
-            <span>HTML</span>
+                <span>Spring MVC</span>
 
-            <span>CSS</span>
+                <span>Spring JDBC</span>
 
-            <span>Maven</span>
+                <span>PostgreSQL</span>
 
-            <span>JUnit</span>
+                <span>SQL</span>
 
-            <span>Mockito</span>
+                <span>Thymeleaf</span>
 
-            <span>Git</span>
+                <span>HTML</span>
 
-            <span>GitHub</span>
+                <span>CSS</span>
+
+                <span>Maven</span>
+
+                <span>JUnit</span>
+
+                <span>Mockito</span>
+
+                <span>Git</span>
+
+                <span>GitHub</span>
+
+            </div>
 
         </div>
 
@@ -112,131 +370,260 @@
     <!-- FEATURED PROJECT -->
     <!-- ===================================================== -->
 
-    <section>
+    <section class="content-section" id="projects">
 
-        <h2>
-            Featured Project
-        </h2>
+        <div class="container">
+
+            <div class="section-heading">
+
+                <p class="section-label">
+                    Selected Work
+                </p>
+
+                <h2>
+                    Featured Project
+                </h2>
+
+            </div>
 
 
-        <article class="project">
+            <article class="project">
 
-            <div class="project-header">
 
-                <div>
+                <div class="project-top">
 
-                    <h3>
-                        Yu-Gi-Oh! Turbo
-                    </h3>
 
-                    <p class="project-subtitle">
-                        Java / Spring Boot Web Application
-                    </p>
+                    <div class="project-visual">
+
+                        <div class="project-visual-overlay">
+
+                            <span class="project-small">
+                                Java / Spring Boot
+                            </span>
+
+                            <strong>
+                                Yu-Gi-Oh!
+                                <br>
+                                Turbo
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project-summary">
+
+
+                        <div class="project-heading">
+
+                            <div>
+
+                                <h3>
+                                    Yu-Gi-Oh! Turbo
+                                </h3>
+
+                                <p class="project-subtitle">
+                                    Java / Spring Boot Web Application
+                                </p>
+
+                            </div>
+
+
+                            <a
+                                    href="https://github.com/ec-mentors/project-module-AnelBecirevic"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="repository-link"
+                            >
+                                View Repository
+
+                                <span>→</span>
+
+                            </a>
+
+                        </div>
+
+
+                        <p>
+                            Yu-Gi-Oh! Turbo is a learning project developed
+                            to combine different backend development concepts
+                            in one application.
+                        </p>
+
+
+                        <p>
+                            It includes account management, PostgreSQL
+                            persistence, card collection and deck management,
+                            and a simplified browser-based duel prototype.
+                        </p>
+
+
+                        <div class="tags project-tags">
+
+                            <span>Java</span>
+
+                            <span>Spring Boot</span>
+
+                            <span>PostgreSQL</span>
+
+                            <span>Spring JDBC</span>
+
+                            <span>Thymeleaf</span>
+
+                            <span>HTML</span>
+
+                            <span>CSS</span>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
 
-                <a
-                        href="https://github.com/ec-mentors/project-module-AnelBecirevic"
-                        target="_blank">
+                <div class="project-details">
 
-                    View Repository
-
-                </a>
-
-            </div>
+                    <h4>
+                        Key Engineering Challenges
+                    </h4>
 
 
-            <p>
-                Yu-Gi-Oh! Turbo is a learning project developed to combine
-                different backend development concepts in one application.
-                It includes account management, PostgreSQL persistence,
-                card collection and deck management, and a simplified
-                browser-based duel prototype.
-            </p>
+                    <div class="challenge-grid">
 
 
-            <div class="tags project-tags">
+                        <div class="challenge">
 
-                <span>Java</span>
+                            <span class="challenge-number">
+                                01
+                            </span>
 
-                <span>Spring Boot</span>
+                            <h5>
+                                Database Design
+                            </h5>
 
-                <span>PostgreSQL</span>
+                            <p>
+                                Designed a relational PostgreSQL schema
+                                for accounts, cards, decks, deck contents
+                                and player card collections.
+                            </p>
 
-                <span>Spring JDBC</span>
-
-                <span>Thymeleaf</span>
-
-                <span>HTML</span>
-
-                <span>CSS</span>
-
-            </div>
-
-
-            <h4>
-                Key Engineering Challenges
-            </h4>
+                        </div>
 
 
-            <ul class="challenges">
+                        <div class="challenge">
 
-                <li>
-                    <strong>Database Design:</strong>
-                    Designed a relational PostgreSQL schema for accounts,
-                    cards, decks, deck contents and player card collections.
-                </li>
+                            <span class="challenge-number">
+                                02
+                            </span>
 
+                            <h5>
+                                Deck &amp; Trunk Management
+                            </h5>
 
-                <li>
-                    <strong>Deck and Trunk Management:</strong>
-                    Implemented logic that separates total card ownership
-                    from cards currently being used inside a player's deck.
-                </li>
+                            <p>
+                                Implemented logic separating total card
+                                ownership from cards currently allocated
+                                inside a player's deck.
+                            </p>
 
-
-                <li>
-                    <strong>Layered Architecture:</strong>
-                    Structured the application using Controller, Service
-                    and Repository layers to separate HTTP handling,
-                    business logic and database access.
-                </li>
+                        </div>
 
 
-                <li>
-                    <strong>Account Management:</strong>
-                    Implemented registration, login, password hashing,
-                    session management and protected routes.
-                </li>
+                        <div class="challenge">
+
+                            <span class="challenge-number">
+                                03
+                            </span>
+
+                            <h5>
+                                Layered Architecture
+                            </h5>
+
+                            <p>
+                                Structured the application using Controller,
+                                Service and Repository layers to separate
+                                HTTP handling, business rules and database
+                                access.
+                            </p>
+
+                        </div>
 
 
-                <li>
-                    <strong>Duel Prototype:</strong>
-                    Integrated persistent deck data with a simplified duel
-                    system including drawing cards, summoning, Tribute
-                    Summoning, battle phases, Life Points and a basic
-                    computer opponent.
-                </li>
+                        <div class="challenge">
+
+                            <span class="challenge-number">
+                                04
+                            </span>
+
+                            <h5>
+                                Account Management
+                            </h5>
+
+                            <p>
+                                Implemented registration, login,
+                                BCrypt password hashing, HTTP session
+                                management and protected routes.
+                            </p>
+
+                        </div>
 
 
-                <li>
-                    <strong>Testing:</strong>
-                    Added JUnit and Mockito tests for deck-management
-                    rules and core duel-service behavior.
-                </li>
+                        <div class="challenge">
 
-            </ul>
+                            <span class="challenge-number">
+                                05
+                            </span>
+
+                            <h5>
+                                Duel Prototype
+                            </h5>
+
+                            <p>
+                                Integrated persistent deck data with a
+                                simplified duel system including drawing,
+                                summoning, Tribute Summoning, phases,
+                                Life Points and a computer opponent.
+                            </p>
+
+                        </div>
 
 
-            <blockquote>
-                This project helped me move from isolated programming
-                exercises to understanding how database design, backend
-                logic and frontend interaction fit together inside a
-                complete application.
-            </blockquote>
+                        <div class="challenge">
 
-        </article>
+                            <span class="challenge-number">
+                                06
+                            </span>
+
+                            <h5>
+                                Testing
+                            </h5>
+
+                            <p>
+                                Added JUnit and Mockito tests for
+                                deck-management rules and important
+                                duel-service behavior.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <blockquote>
+
+                    This project helped me move from isolated programming
+                    exercises to understanding how database design,
+                    backend logic and frontend interaction fit together
+                    inside a complete application.
+
+                </blockquote>
+
+            </article>
+
+        </div>
 
     </section>
 
@@ -245,45 +632,84 @@
     <!-- CONTACT -->
     <!-- ===================================================== -->
 
-    <section>
+    <section class="content-section contact-section" id="contact">
 
-        <h2>
-            Links
-        </h2>
+        <div class="container">
 
-        <div class="links">
+            <div class="contact-box">
 
-            <a
-                    href="https://github.com/AnelBecirevic"
-                    target="_blank">
+                <div>
 
-                GitHub Profile
+                    <p class="section-label">
+                        Contact
+                    </p>
 
-            </a>
+                    <h2>
+                        Let's Connect
+                    </h2>
+
+                    <p>
+                        I'm currently looking to continue developing
+                        my backend skills in a professional software
+                        development environment.
+                    </p>
+
+                </div>
 
 
-            <a
-                    href="https://github.com/AnelBecirevic/YuGiOh-Turbo"
-                    target="_blank">
+                <div class="contact-links">
 
-                Yu-Gi-Oh! Turbo Repository
+                    <a
+                            href="https://github.com/AnelBecirevic"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-secondary"
+                    >
+                        GitHub
+                    </a>
 
-            </a>
+
+                    <a
+                            href="https://www.linkedin.com/in/anel-becirevic-9670813b0/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="button button-primary"
+                    >
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
 
         </div>
 
     </section>
 
 
-    <footer>
+</main>
+
+
+<!-- ========================================================= -->
+<!-- FOOTER -->
+<!-- ========================================================= -->
+
+<footer>
+
+    <div class="container footer-container">
 
         <p>
             © 2026 Anel Becirevic
         </p>
 
-    </footer>
+        <a href="#home">
+            Back to top ↑
+        </a>
 
-</main>
+    </div>
+
+</footer>
+
 
 </body>
 
