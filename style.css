@@ -8,8 +8,7 @@
 
 html {
     scroll-behavior: smooth;
-
-    scroll-padding-top: 90px;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -34,19 +33,16 @@ body {
 
 img {
     display: block;
-
     max-width: 100%;
 }
 
 a {
     color: inherit;
-
     text-decoration: none;
 }
 
 .container {
     width: min(1180px, 88%);
-
     margin: 0 auto;
 }
 
@@ -65,16 +61,16 @@ a {
 
     width: 100%;
 
-    background: rgba(5, 12, 19, 0.9);
+    background: rgba(5, 12, 19, 0.88);
 
     border-bottom: 1px solid rgba(130, 154, 181, 0.16);
 
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
 }
 
 .nav-container {
-    width: min(1180px, 88%);
+    width: min(1360px, 90%);
 
     height: 72px;
 
@@ -83,7 +79,6 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 }
 
@@ -143,10 +138,7 @@ a {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
-
-    margin-left: 5px;
 }
 
 .github-nav svg {
@@ -162,72 +154,95 @@ a {
 .hero {
     position: relative;
 
+    min-height: 650px;
+
     padding-top: 72px;
 
     overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 73% 48%,
-            rgba(173, 71, 28, 0.06),
-            transparent 25%
-        ),
-        #071019;
+    background: #071019;
 
     border-bottom: 1px solid rgba(96, 123, 151, 0.18);
 }
 
 
 /*
-   The important difference from the previous version:
+   Full-width background image.
 
-   The hero now has a MAXIMUM WIDTH.
-
-   The portrait therefore does NOT keep getting larger
-   when the browser becomes ultrawide.
+   The generated PNG already contains the dark negative space
+   on the left, so we let the image do most of the visual work.
 */
 
-.hero-shell {
+.hero-image {
+    position: absolute;
+
+    inset: 72px 0 0 0;
+
+    background-image: url("images/profile.png");
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+    background-position: center center;
+}
+
+
+/*
+   Very light overlay only.
+
+   We are NOT heavily blurring or darkening the image anymore.
+*/
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 72px 0 0 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(7, 16, 25, 0.3) 0%,
+            rgba(7, 16, 25, 0.08) 33%,
+            transparent 55%
+        ),
+        linear-gradient(
+            0deg,
+            rgba(7, 16, 25, 0.45) 0%,
+            transparent 18%
+        );
+
+    pointer-events: none;
+}
+
+.hero-container {
     position: relative;
 
-    width: min(1320px, 92%);
+    z-index: 3;
 
-    min-height: 610px;
+    width: min(1360px, 90%);
+
+    min-height: 578px;
 
     margin: 0 auto;
 
-    display: grid;
-
-    grid-template-columns:
-        minmax(460px, 1fr)
-        minmax(450px, 600px);
+    display: flex;
 
     align-items: center;
-
-    gap: 30px;
 }
 
-
-/* ============================================================
-   HERO TEXT
-   ============================================================ */
-
 .hero-content {
-    position: relative;
+    width: min(610px, 47%);
 
-    z-index: 5;
-
-    max-width: 590px;
-
-    padding-left: 20px;
+    padding-bottom: 10px;
 }
 
 .hero-intro {
-    margin: 0 0 7px;
+    margin: 0 0 6px;
 
-    color: #91b8dc;
+    color: #95abc0;
 
-    font-size: 17px;
+    font-size: 18px;
 }
 
 .hero h1 {
@@ -235,23 +250,21 @@ a {
 
     color: #ffffff;
 
-    font-size: clamp(49px, 4.5vw, 68px);
+    font-size: clamp(52px, 4.5vw, 70px);
 
-    line-height: 1.04;
+    line-height: 1.03;
 
-    letter-spacing: -2.3px;
+    letter-spacing: -2.4px;
 }
 
 .hero-title {
-    margin: 8px 0 0;
+    margin: 9px 0 0;
 
     padding: 0;
 
-    color: #408cff;
-
     border: 0;
 
-    font-size: clamp(27px, 2.4vw, 35px);
+    font-size: clamp(28px, 2.4vw, 36px);
 
     line-height: 1.2;
 
@@ -261,25 +274,27 @@ a {
         linear-gradient(
             90deg,
             #318aff,
-            #646dff
+            #756aff
         );
 
     background-clip: text;
     -webkit-background-clip: text;
 
+    color: transparent;
+
     -webkit-text-fill-color: transparent;
 }
 
 .hero-description {
-    max-width: 575px;
+    max-width: 600px;
 
-    margin: 19px 0 0;
+    margin: 20px 0 0;
 
-    color: #c1ccd8;
+    color: #c4ced8;
 
-    font-size: 16px;
+    font-size: 17px;
 
-    line-height: 1.55;
+    line-height: 1.52;
 }
 
 .hero-buttons {
@@ -287,147 +302,7 @@ a {
 
     gap: 14px;
 
-    margin-top: 29px;
-}
-
-
-/* ============================================================
-   HERO PORTRAIT
-   ============================================================ */
-
-.hero-portrait {
-    position: relative;
-
-    align-self: stretch;
-
-    min-width: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: flex-end;
-}
-
-
-/*
-   Slight warm glow behind the photo.
-
-   This takes some of the orange already present in the
-   photograph and lets it subtly bleed into the navy.
-*/
-
-.portrait-glow {
-    position: absolute;
-
-    z-index: 0;
-
-    top: 15%;
-    right: 4%;
-
-    width: 72%;
-    height: 66%;
-
-    background:
-        radial-gradient(
-            circle,
-            rgba(190, 73, 21, 0.2),
-            rgba(116, 45, 18, 0.07) 46%,
-            transparent 72%
-        );
-
-    filter: blur(45px);
-}
-
-
-/*
-   This frame controls the image.
-
-   It does not care whether the screen is 1920px,
-   2560px or 3440px wide.
-
-   The frame only grows to 600px.
-*/
-
-.portrait-frame {
-    position: relative;
-
-    z-index: 2;
-
-    width: 100%;
-
-    max-width: 600px;
-
-    height: 540px;
-
-    overflow: hidden;
-}
-
-
-/*
-   We're deliberately zooming the original photo slightly.
-
-   That removes much more of the person on the far right
-   while keeping your face and upper body visible.
-*/
-
-.portrait-image {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    /*
-       Horizontal / vertical crop.
-
-       Lower first number:
-       show more of the LEFT.
-
-       Higher first number:
-       show more of the RIGHT.
-    */
-
-    object-position: 35% 44%;
-
-    transform: scale(1.08);
-
-    filter:
-        brightness(0.92)
-        contrast(1.03)
-        saturate(0.95);
-}
-
-
-/*
-   Instead of a hard rectangular edge, the photo dissolves
-   naturally into the navy background.
-
-   Most importantly, the LEFT edge disappears completely.
-*/
-
-.portrait-fade {
-    position: absolute;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    background:
-        linear-gradient(
-            90deg,
-            #071019 0%,
-            rgba(7, 16, 25, 0.96) 4%,
-            rgba(7, 16, 25, 0.72) 15%,
-            rgba(7, 16, 25, 0.25) 31%,
-            rgba(7, 16, 25, 0.02) 48%,
-            transparent 60%
-        ),
-        linear-gradient(
-            0deg,
-            #071019 0%,
-            rgba(7, 16, 25, 0.4) 9%,
-            transparent 29%
-        );
+    margin-top: 30px;
 }
 
 
@@ -436,14 +311,13 @@ a {
    ============================================================ */
 
 .button {
-    min-height: 49px;
+    min-height: 50px;
 
-    padding: 0 24px;
+    padding: 0 25px;
 
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 13px;
@@ -478,7 +352,7 @@ a {
     border: 1px solid #4c95ed;
 
     box-shadow:
-        0 8px 25px rgba(25, 111, 230, 0.15);
+        0 8px 25px rgba(25, 111, 230, 0.16);
 }
 
 .button-primary:hover {
@@ -489,7 +363,7 @@ a {
 .button-secondary {
     color: #f0f5fb;
 
-    background: rgba(7, 16, 25, 0.7);
+    background: rgba(7, 16, 25, 0.68);
 
     border: 1px solid #3276df;
 }
@@ -512,9 +386,9 @@ a {
 
     flex-wrap: wrap;
 
-    gap: 27px;
+    gap: 28px;
 
-    margin-top: 30px;
+    margin-top: 31px;
 }
 
 .social-link {
@@ -524,7 +398,7 @@ a {
 
     gap: 9px;
 
-    color: #c4cfda;
+    color: #c6d0db;
 
     font-size: 13px;
 
@@ -540,20 +414,19 @@ a {
 }
 
 .social-icon {
-    width: 39px;
-    height: 39px;
+    width: 40px;
+    height: 40px;
 
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     border: 1px solid #29435c;
 
     border-radius: 50%;
 
-    background: rgba(8, 19, 30, 0.76);
+    background: rgba(8, 19, 30, 0.72);
 }
 
 .social-icon svg {
@@ -804,8 +677,6 @@ p {
     border: 1px solid rgba(229, 96, 61, 0.22);
 
     border-radius: 50%;
-
-    transform: rotate(-15deg);
 }
 
 .project-visual::after {
@@ -836,7 +707,6 @@ p {
     display: flex;
 
     flex-direction: column;
-
     justify-content: flex-end;
 
     background:
@@ -867,8 +737,6 @@ p {
     font-size: 33px;
 
     line-height: 1.02;
-
-    letter-spacing: -1px;
 }
 
 .project-summary {
@@ -879,7 +747,6 @@ p {
     display: flex;
 
     justify-content: space-between;
-
     align-items: flex-start;
 
     gap: 30px;
@@ -893,8 +760,6 @@ p {
     color: #ffffff;
 
     font-size: 25px;
-
-    letter-spacing: -0.4px;
 }
 
 .project-subtitle {
@@ -906,8 +771,6 @@ p {
 }
 
 .project-summary > p {
-    max-width: 690px;
-
     margin: 0 0 12px;
 }
 
@@ -935,15 +798,9 @@ p {
     font-size: 13px;
 
     font-weight: 600;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
 }
 
 .repository-link:hover {
-    transform: translateY(-2px);
-
     background: rgba(30, 103, 194, 0.18);
 }
 
@@ -1055,7 +912,6 @@ blockquote {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 
     gap: 50px;
@@ -1106,7 +962,6 @@ footer {
     display: flex;
 
     align-items: center;
-
     justify-content: space-between;
 }
 
@@ -1123,39 +978,62 @@ footer {
 
 
 /* ============================================================
-   SMALL DESKTOP / TABLET
+   ULTRAWIDE
    ============================================================ */
 
-@media (max-width: 1100px) {
+@media (min-width: 1800px) {
 
-    .hero-shell {
-        width: 90%;
+    .hero {
+        min-height: 680px;
+    }
 
-        grid-template-columns:
-            minmax(390px, 1fr)
-            minmax(390px, 520px);
+    .hero-container {
+        min-height: 608px;
+    }
 
-        gap: 10px;
+    /*
+       Prevent the portrait from becoming too huge on ultrawide.
+       "contain" would create borders, so we keep cover but
+       slightly bias the composition right.
+    */
+
+    .hero-image {
+        background-size: cover;
+
+        background-position: 56% center;
+    }
+
+}
+
+
+/* ============================================================
+   TABLET / NARROW DESKTOP
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+    .hero {
+        min-height: 600px;
+    }
+
+    .hero-container {
+        min-height: 528px;
     }
 
     .hero-content {
-        padding-left: 0;
+        width: 50%;
     }
 
-    .portrait-frame {
-        height: 500px;
+    .hero-image {
+        background-position: 56% center;
     }
 
-    .portrait-image {
-        object-position: 34% 43%;
-
-        transform: scale(1.12);
+    .hero h1 {
+        font-size: clamp(46px, 6vw, 60px);
     }
 
-    .project-top {
-        grid-template-columns:
-            240px
-            minmax(0, 1fr);
+    .hero-title {
+        font-size: 28px;
     }
 
     .challenge-grid {
@@ -1165,52 +1043,6 @@ footer {
 
     .about-grid {
         gap: 35px;
-    }
-
-}
-
-
-/* ============================================================
-   TABLET / NARROW WINDOW
-   ============================================================ */
-
-@media (max-width: 850px) {
-
-    .hero-shell {
-        width: 90%;
-
-        grid-template-columns:
-            minmax(320px, 1.05fr)
-            minmax(300px, 0.95fr);
-
-        min-height: 560px;
-    }
-
-    .hero h1 {
-        font-size: clamp(43px, 6vw, 56px);
-    }
-
-    .hero-title {
-        font-size: 27px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .portrait-frame {
-        height: 470px;
-    }
-
-    /*
-       Crop tighter at narrower desktop widths so the person
-       on the right remains mostly outside the frame.
-    */
-
-    .portrait-image {
-        object-position: 31% 43%;
-
-        transform: scale(1.17);
     }
 
 }
@@ -1232,7 +1064,6 @@ footer {
 
     .nav-container {
         width: 90%;
-
         height: 64px;
     }
 
@@ -1250,81 +1081,56 @@ footer {
        ======================================================== */
 
     .hero {
+        min-height: auto;
+
         padding-top: 64px;
     }
 
-    .hero-shell {
-        width: 100%;
-
-        min-height: 0;
-
-        display: flex;
-
-        flex-direction: column-reverse;
-
-        gap: 0;
-    }
-
-
     /*
-       Mobile uses the photo as a wide banner.
-
-       Unlike desktop, there is no need to keep text and image
-       beside each other when the screen is this narrow.
+       On mobile the image becomes a banner at the top.
     */
 
-    .hero-portrait {
+    .hero-image {
+        position: relative;
+
+        inset: auto;
+
         width: 100%;
+        height: 360px;
 
-        height: 390px;
+        background-size: cover;
 
-        display: block;
+        background-position: 64% center;
     }
 
-    .portrait-frame {
-        width: 100%;
+    .hero-overlay {
+        top: 64px;
 
-        max-width: none;
+        bottom: auto;
 
-        height: 100%;
-    }
+        height: 360px;
 
-    .portrait-image {
-        object-position: 38% 38%;
-
-        transform: scale(1.05);
-    }
-
-    .portrait-fade {
         background:
             linear-gradient(
                 0deg,
                 #071019 0%,
-                rgba(7, 16, 25, 0.78) 8%,
-                rgba(7, 16, 25, 0.2) 27%,
-                transparent 50%
-            ),
-            linear-gradient(
-                90deg,
-                rgba(7, 16, 25, 0.22),
-                transparent 30%,
-                transparent 70%,
-                rgba(7, 16, 25, 0.12)
+                rgba(7, 16, 25, 0.35) 28%,
+                transparent 58%
             );
     }
 
-    .portrait-glow {
-        display: none;
+    .hero-container {
+        min-height: auto;
+
+        width: 90%;
+
+        padding: 38px 0 65px;
     }
 
     .hero-content {
-        width: 90%;
+        width: 100%;
 
         max-width: none;
-
-        margin: 0 auto;
-
-        padding: 35px 0 65px;
     }
 
     .hero-intro {
@@ -1333,13 +1139,13 @@ footer {
 
     .hero h1 {
         font-size:
-            clamp(41px, 12vw, 55px);
+            clamp(42px, 12vw, 56px);
 
         letter-spacing: -1.7px;
     }
 
     .hero-title {
-        font-size: 26px;
+        font-size: 27px;
     }
 
     .hero-description {
@@ -1418,14 +1224,13 @@ footer {
         font-size: 18px;
     }
 
-    .hero-portrait {
-        height: 330px;
+    .hero-image,
+    .hero-overlay {
+        height: 315px;
     }
 
-    .portrait-image {
-        object-position: 39% 38%;
-
-        transform: scale(1.08);
+    .hero-image {
+        background-position: 66% center;
     }
 
     .hero-buttons {
