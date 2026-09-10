@@ -213,10 +213,20 @@ a {
 
 .hero-overlay {
     position: absolute;
-
     inset: 0;
 
     background:
+        /* RIGHT EDGE FADE */
+        linear-gradient(
+            270deg,
+            #071019 0%,
+            rgba(7, 16, 25, 0.95) 3%,
+            rgba(7, 16, 25, 0.65) 7%,
+            rgba(7, 16, 25, 0.25) 11%,
+            transparent 16%
+        ),
+
+        /* LEFT TEXT FADE */
         linear-gradient(
             90deg,
             #071019 0%,
