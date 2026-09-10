@@ -61,7 +61,7 @@ a {
 
     width: 100%;
 
-    background: rgba(5, 12, 19, 0.88);
+    background: rgba(5, 12, 19, 0.9);
 
     border-bottom: 1px solid rgba(130, 154, 181, 0.16);
 
@@ -167,10 +167,10 @@ a {
 
 
 /*
-   Full-width background image.
+   The generated image is already composed correctly.
 
-   The generated PNG already contains the dark negative space
-   on the left, so we let the image do most of the visual work.
+   We preserve its aspect ratio and make it exactly as tall
+   as the hero rather than forcing it to cover the viewport.
 */
 
 .hero-image {
@@ -178,20 +178,24 @@ a {
 
     inset: 72px 0 0 0;
 
+    background-color: #071019;
+
     background-image: url("images/profile.png");
 
     background-repeat: no-repeat;
 
-    background-size: cover;
+    background-size: auto 100%;
 
-    background-position: center center;
+    background-position: 88% center;
 }
 
 
 /*
-   Very light overlay only.
+   Only a soft left-side transition.
 
-   We are NOT heavily blurring or darkening the image anymore.
+   No blur.
+   No dark filter across your face.
+   No image scaling.
 */
 
 .hero-overlay {
@@ -202,14 +206,12 @@ a {
     background:
         linear-gradient(
             90deg,
-            rgba(7, 16, 25, 0.3) 0%,
-            rgba(7, 16, 25, 0.08) 33%,
-            transparent 55%
-        ),
-        linear-gradient(
-            0deg,
-            rgba(7, 16, 25, 0.45) 0%,
-            transparent 18%
+            #071019 0%,
+            rgba(7, 16, 25, 0.96) 12%,
+            rgba(7, 16, 25, 0.78) 23%,
+            rgba(7, 16, 25, 0.35) 36%,
+            rgba(7, 16, 25, 0.08) 48%,
+            transparent 59%
         );
 
     pointer-events: none;
@@ -232,7 +234,7 @@ a {
 }
 
 .hero-content {
-    width: min(610px, 47%);
+    width: min(610px, 45%);
 
     padding-bottom: 10px;
 }
@@ -286,7 +288,7 @@ a {
 }
 
 .hero-description {
-    max-width: 600px;
+    max-width: 590px;
 
     margin: 20px 0 0;
 
@@ -798,9 +800,15 @@ p {
     font-size: 13px;
 
     font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .repository-link:hover {
+    transform: translateY(-2px);
+
     background: rgba(30, 103, 194, 0.18);
 }
 
@@ -991,16 +999,14 @@ footer {
         min-height: 608px;
     }
 
-    /*
-       Prevent the portrait from becoming too huge on ultrawide.
-       "contain" would create borders, so we keep cover but
-       slightly bias the composition right.
-    */
-
     .hero-image {
-        background-size: cover;
+        background-size: auto 100%;
 
-        background-position: 56% center;
+        background-position: 82% center;
+    }
+
+    .hero-content {
+        width: min(620px, 42%);
     }
 
 }
@@ -1025,7 +1031,9 @@ footer {
     }
 
     .hero-image {
-        background-position: 56% center;
+        background-size: auto 100%;
+
+        background-position: 90% center;
     }
 
     .hero h1 {
@@ -1084,11 +1092,11 @@ footer {
         min-height: auto;
 
         padding-top: 64px;
-    }
 
-    /*
-       On mobile the image becomes a banner at the top.
-    */
+        display: flex;
+
+        flex-direction: column;
+    }
 
     .hero-image {
         position: relative;
@@ -1096,9 +1104,11 @@ footer {
         inset: auto;
 
         width: 100%;
-        height: 360px;
+        height: 350px;
 
-        background-size: cover;
+        background-color: #071019;
+
+        background-size: auto 100%;
 
         background-position: 64% center;
     }
@@ -1108,14 +1118,15 @@ footer {
 
         bottom: auto;
 
-        height: 360px;
+        height: 350px;
 
         background:
             linear-gradient(
                 0deg,
                 #071019 0%,
-                rgba(7, 16, 25, 0.35) 28%,
-                transparent 58%
+                rgba(7, 16, 25, 0.55) 13%,
+                rgba(7, 16, 25, 0.12) 32%,
+                transparent 55%
             );
     }
 
